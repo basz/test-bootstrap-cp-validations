@@ -1,0 +1,19 @@
+<div style="height:2em; width:100%;text-align: right;">
+    {{#if isProcessing}}
+        {{fa-icon "circle-o-notch" spin=true}}
+    {{/if}}
+</div>
+
+{{#bs-form formLayout="vertical" model=model action="submit" disabled=isProcessing}}
+
+    {{bs-form-element controlType="input" label="Name" placeholder="Name" property="displayName" disabled=isProcessing showValidation=true}}
+
+    {{bs-form-element controlType="email" label="Email" placeholder="Email" property="emailAddress" disabled=isProcessing showValidation=true}}
+
+    {{bs-form-element controlType="password" label="Password" placeholder="Password" property="password" disabled=isProcessing showValidation=true}}
+
+    {{bs-form-element controlType="password" label="Password Confirmation" placeholder="Password" property="passwordConfirmation" disabled=isProcessing showValidation=true}}
+
+    {{bs-button defaultText="Create Account" type="primary" buttonType="submit" disabled=isNotSubmitable action="submit"}}
+
+{{/bs-form}}
